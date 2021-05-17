@@ -1,0 +1,280 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    line-height: 1.5em;
+    background-color: rgb(8, 1, 1);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* Make box-sizing "border-box" as default */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/*main tags */
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+span {
+    padding: 5em;
+    color: white;
+}
+
+header h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+    line-height: 1.75;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    /*font-family: 'Lobster', cursive;*/
+    color: white;
+    margin-bottom: 0;
+
+}
+
+h2 {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+/* PARAGRAPHS------------------------*/
+
+p {
+    margin-bottom: 1em;
+    margin-top: 2em;
+    color: white;
+}
+/*links
+------------------------------------------*/
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: black;
+}
+/*Standard Tags For Bold*/
+
+strong {
+    font-weight: 500;
+    color: red;
+}
+
+em {
+    font-style: italic;
+}
+/*Images
+-------------------*/
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* Form Element*/
+/* Selection, placeholder*/
+/*3. HELPER CLASSES (reusable styles)
+-------------------------------------------------------------------------- */
+
+.font400 {
+    font-weight: 400;
+}
+
+.font500 {
+    font-weight: 500;
+}
+
+.font700 {
+    font-weight: 700;
+}
+
+.align-center {
+    text-align: center;
+}
+/* MARGINS--------------------*/
+
+.m0 {
+    margin: 0;
+}
+.m1 {
+    margin: 1em;
+}
+.m4 {
+    margin: 4em;
+}
+.m5 {
+    margin: 5em;
+}
+.mt-0 {
+    margin-top: 0;
+
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.mt-3 {
+    margin-top: 3em;
+}
+.mt-5{
+    margin-top: 5em;
+}
+.mb-0 {
+    margin-bottom: 0.01em;
+}
+
+.mb-1 {
+    margin-bottom: 1em;
+}
+
+
+section {
+    padding: 2em 4em;
+    background-color: black;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.row.align-top {
+    align-items: flex-start;
+}
+
+/*style---------------
+----------------------*/
+body{
+    background-image: url("../img/Rise_Of_Super_Heroes.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+/*HEADER-----------------
+---------*/
+.top-header{
+    background-color:rgba(8, 1, 1, 0.6);
+}
+.container{
+    display: flex;
+    margin-top: 3px;
+    align-items: center;
+    justify-content: space-evenly;
+    color: rebeccapurple;
+}
+.card{
+    display: inline-block;
+}
+.jumbotron{
+    display: inline-block;
+    width: 60%;
+    min-height: 100%;
+    color: white;
+    background-color:rgba(0,0,0,0.6);
+    margin-top: 1%;
+}
+.jumbotron h1 {
+    font-size: 3rem;
+}
+/* HERO DETAIL IMG*/
+.details{
+    text-align: center;
+    border-bottom: 2px solid white;
+    border-bottom-width: 70%;
+    border-radius: 30%;
+}
+hr{
+    border: 1px solid white;
+}
+.msgContainer{
+    position: absolute;
+    left: 40%;
+    right: auto;
+    top: 40%;
+    padding: 3%;
+    background-color: rgba(255,255,255,0.9);
+    display: none;
+}
+#message{
+    font-size: 1.3rem;
+}
+ 
+

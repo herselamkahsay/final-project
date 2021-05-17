@@ -1,0 +1,98 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Pre caree day project</title>
+            <link rel="icon" href="assets/favicon/favicon192.png">
+            <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="assets/css/style.css">
+            <!--<script type="text/javascript" src="data.json"></script>-->
+            <script type="text/javascript" src="assets/js/app.js"></script>
+
+
+        </head> 
+        <body class="bg-color">
+            <!-- Header
+            -------------------------------------------------------------->
+            <header class="top-header row">
+                <nav>
+                    <ul class="menu row font400">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href=""></a>favourite</li>
+                    </ul>
+                </nav>
+        
+            </header>
+            <!-- END OF HEADER
+            --------------------------------------->
+            <main>
+                    <!-- main
+            -------------------------------------------------------------->
+                <!-- SECTION ONE --------------------------->
+                <section class="row align-top m4 mb-0 mt-5 backgroundImage">
+                <div>  
+                <h1 class="align-center mb-1 m4">"All you need to know about your favourite movie super heros"</h1>
+                </div>
+                <hr class="bottom boarder">
+            </div>
+        
+                    <hr>
+                <div class="jumbotron container">
+                    <div class="inputGroup mb-3">
+                        <h1 class="color">Search your superhero</h1>
+                        <hr>
+                        <input type="text" placeholder="Search the superheros" id="superHeroName">
+                        <hr>
+                        <button id="btnSearch" class="btn" id="btnSearch" ><i class="fav favSearch"></i>Search </button>
+                        <button id="btnSearch" class="btn" id="btnFavourite" ><i class="fav favStar"></i>My Favourites </button>
+                    </div>
+                </div>
+                <div id="autoCompleteContainer">
+                    <ul id="autoComplete listGroupItem">
+                        <li></li>
+                    </ul>
+                </div>
+            
+            </section>
+            </main>
+            <script>
+
+                const ul = document.getElementById('superHeroName');
+            
+            </script>
+            <section id="superherodetails">
+            <div class="container">
+                <div class="card mt-0" style="width: 20rem;" id="heroDetails">
+                <img src="" class="cardImgTop" alt="superhero image" id="heroImage">
+             </div>
+             <div class="jumbotron">
+                 <h1 class="display-5" id="heroName"></h1>
+                 <h3 id="aliases"></h3>
+                 <hr>
+                 <div class="lead" id="occupation"></div>
+                 <hr class="my-4">
+                 <h4 class="lead" id="connections"></h4>
+                 <hr>
+                 <div id="moreInfo"></div>
+                 <div id="addFav">
+                    <button id="btnAddfav" class="btn btnPrimary btnLg btnBlock mt-1" ><i class="fav favplus"></i>add to favorite </button>
+                    <button id="btnSearch" class="btn btnDanger btnLg btnBlock" id="btnFavourite" ><i class="fav favStar"></i>my Favourites </button>
+        
+                 </div>
+        
+             </div>
+            </div>
+            <!--test message got-->
+            <div id="msgContainer">
+                <div id="message">
+                    Added successfully!
+                </div>
+            </div>
+        </section>
+            
+        </body>
+        </html>
