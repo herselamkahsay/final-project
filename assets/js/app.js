@@ -1,44 +1,57 @@
-function createNode(element) {
-    return document.createElement(element);
-}
+ document.getElementById("superHeroName").onkeyup=getData;
 
-const ul = document.getElementById('superHeroName');
-const url = 'https://superheroapi.com/api/4382711015094904/search/';
+//superHero ID
+let superHeroId=0;
+//function to get data
+function getData() {
 
-fetch('https://superheroapi.com/api/4382711015094904/search/')
-var data = JSON.parse(request.response);
-//getting all dat()            
-var names = data.results;
-if(names == null){
+    var val = document.getElementById('superHeroName').value;
+    var list = document.getElementById('autoComplete');
     clearList();
-    console.log("not found");
-}
-else {
-    for(var i of names){
-        var li = document.createElement('li');
-        li.innerText = i.name; //property
-        li.id = i.id;
-        li.classList.add('listGroupItem');
-        li.addEventListener('click', function() {
-            superHeroId=this.id;
-            document.getElementById('superHeroName').value=this.innerText;
-            clearList();
-            document.getElementById('superHeroName').focus();
-            return;
-        })
-        var ul = document.getElementById('autoComplete').appendChild(ul);
+
+   var xhrRequest = new XMLHttpRequest();
+    xhrRequest.onload = function() {
+      
+        // Success!
+            var result = JSON.parse(xhrRequest.response);
+            //getting all dat()              
+            var names = result.results;
+            if(names == null){
+                clearList();
+                console.log("not found");
+            }
+            else {
+                for(var i of names){
+                    var li = document.createElement('li');
+                    li.innerText = i.name; //property
+                    li.id = i.id;
+                    li.classList.add('listGroupItem');
+                    li.addEventListener('click', function() {
+                        superHeroId=this.id;
+                        document.getElementById('superHeroName').value=this.innerText;
+                        clearList();
+                        document.getElementById('superHeroName').focus();
+                        return;
+                    })
+                    var ul = document.getElementById('autoComplete').appendChild(ul);
+
+                }
+            }
+        }
+
+//XMLHTTPREQUEST
+
+//request.open('get', `https://superheroapi.com/api.php/4382711015094904/search/${this.state.name})` // MY EXTERNAL JSON URL
+request.open('get', 'https://superheroapi.com/api.php/4382711015094904/search/'+ val); // MY EXTERNAL JSON URL
+request.send();
 
     }
-}
 
-//request.open('get', `https://superheroapi.com/api/4382711015094904/search/${this.superHeroId.val}`) // MY EXTERNAL JSON URL
-//request.send();
-    
 
 
     //function to clear the list item from the list
     function clearList(){
-        const list=document.getElementById('autoComplete');
+       const list=document.getElementById('autoComplete');
         while(list.hasChildNodes()) {
             list.removeChild(list.firstChild)
         }
@@ -50,12 +63,12 @@ else {
             if(name="") {
                 alert("Enter the name");
             }
-            else if(heroId==0) {
+            else if(superHeroId==0) {
                 alert('hero not find try from the list');
 
             }
             else {
-                window.open('superhero.html?id='+heroId,'blank');
+                window.open('superhero.html?id='+superHeroId,'blank');
             }
         }
 //document.getElementById('btnFavourite').addEventListener('click',function() {
