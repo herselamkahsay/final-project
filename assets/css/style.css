@@ -331,6 +331,21 @@ body{
     display: none;
 }
 
+/*-----------------media query----------*/
+@media screen and (max-width:550px) {
+    .inputGroup input {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    #autoComplete {
+        width: 40vw;
+        cursor: pointer;
+    }
+    button {
+        margin-top: 1%;
+    }
+    
+}
 
 
 

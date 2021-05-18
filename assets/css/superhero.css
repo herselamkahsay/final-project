@@ -264,6 +264,17 @@ body{
 hr{
     border: 1px solid white;
 }
+.btn{
+    color: black;
+    border-radius: 10px;
+    margin-left: 0%;
+    max-width: 40em;
+    width: 30%;
+    font-size: 0.8em;
+    text-align: center;
+    transition:0.2s ease-in-out;
+    cursor: pointer;
+}
 .msgContainer{
     position: absolute;
     left: 40%;

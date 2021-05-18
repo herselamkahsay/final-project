@@ -7,7 +7,7 @@ function getData() {
 
     var val = document.getElementById('superHeroName').value;
     var list = document.getElementById('autoComplete');
-    clearList();
+    clearList(list);
 
    var xhrRequest = new XMLHttpRequest();
     xhrRequest.onload = function() {
@@ -42,7 +42,7 @@ function getData() {
 //XMLHTTPREQUEST
 
 //request.open('get', `https://superheroapi.com/api.php/4382711015094904/search/${this.state.name})` // MY EXTERNAL JSON URL
-request.open('get', 'https://superheroapi.com/api.php/4382711015094904/search/'+ val); // MY EXTERNAL JSON URL
+request.open('get', 'https://superheroapi.com/api.php/4382711015094904/search/' +val); // MY EXTERNAL JSON URL
 request.send();
 
     }
@@ -68,9 +68,9 @@ request.send();
 
             }
             else {
-                window.open('superhero.html?id='+superHeroId,'blank');
+                window.open('superhero.html?id='+superHeroId, 'blank');
             }
         }
-//document.getElementById('btnFavourite').addEventListener('click',function() {
-   // window.location.assign('favourite.html');})
+document.getElementById('btnFavourite').addEventListener('click',function() {
+  window.location.assign('favourite.html');})
 
