@@ -24,9 +24,7 @@ and other challenge was to understand and how to use API. I make search to read 
 **https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/handle-a-fulfilled-promise-with-then**  
 **https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data** 
 
-## my assumptions where:-
+## my assumptions were:-
  
 
 
-
-put _another ~~text_ here
