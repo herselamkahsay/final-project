@@ -235,10 +235,10 @@ body{
 }
 .container{
     display: flex;
-    margin-top: 3px;
+    margin-top: 0.5%;
     align-items: center;
     justify-content: space-evenly;
-    color: rebeccapurple;
+   
 }
 .card{
     display: inline-block;
@@ -257,6 +257,7 @@ body{
 /* HERO DETAIL IMG*/
 .details{
     text-align: center;
+    font-size: 1.1rem;
     border-bottom: 2px solid white;
     border-bottom-width: 70%;
     border-radius: 30%;
@@ -264,6 +265,7 @@ body{
 hr{
     border: 1px solid white;
 }
+
 .btn{
     color: black;
     border-radius: 10px;
@@ -275,7 +277,7 @@ hr{
     transition:0.2s ease-in-out;
     cursor: pointer;
 }
-.msgContainer{
+#msgContainer{
     position: absolute;
     left: 40%;
     right: auto;

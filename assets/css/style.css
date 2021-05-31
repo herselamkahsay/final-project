@@ -281,11 +281,13 @@ body{
 }
 .container {
     text-align: center;
+    color: #ffffff;
     margin-top: 10%;
     margin-left: 30%;
     padding: 40px;
     font-weight: 600;
 }
+
 .jumbotron{
     display: inline-block;
     width: 60%;

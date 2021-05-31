@@ -1,7 +1,7 @@
-# final-project
-# project title
-search super hero, read information and save your favorite
-# To make this webpage I used HTML CSS AND JAVASCRIPT
+## final-project
+
+## search super hero, read information and save your favorite
+## To make this webpage I used HTML CSS AND JAVASCRIPT
 I didn't used any library
 in my assets folder I have all the files other than index.html
 I try to organize and easy to access

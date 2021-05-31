@@ -1,13 +1,13 @@
- document.getElementById("superHeroName").onkeyup=getData;
+ document.getElementById("heroName").onkeyup=getData;
 
 //superHero ID
-let superHeroId=0;
+let heroId=0;
 //function to get data
 function getData() {
 
-    var val = document.getElementById('superHeroName').value;
+    var val = document.getElementById('heroName').value;
     var list = document.getElementById('autoComplete');
-    clearList(list);
+  //  clearList();
 
    var xhrRequest = new XMLHttpRequest();
     xhrRequest.onload = function() {
@@ -27,13 +27,13 @@ function getData() {
                     li.id = i.id;
                     li.classList.add('listGroupItem');
                     li.addEventListener('click', function() {
-                        superHeroId=this.id;
-                        document.getElementById('superHeroName').value=this.innerText;
+                        heroId=this.id;
+                        document.getElementById('heroName').value=this.innerText;
                         clearList();
-                        document.getElementById('superHeroName').focus();
+                        document.getElementById('heroName').focus();
                         return;
                     })
-                    var ul = document.getElementById('autoComplete').appendChild(ul);
+                    var ul = document.getElementById('autoComplete').appendChild(li);
 
                 }
             }
@@ -42,16 +42,26 @@ function getData() {
 //XMLHTTPREQUEST
 
 //request.open('get', `https://superheroapi.com/api.php/4382711015094904/search/${this.state.name})` // MY EXTERNAL JSON URL
-request.open('get', 'https://superheroapi.com/api.php/4382711015094904/search/' +val); // MY EXTERNAL JSON URL
-request.send();
+xhrRequest.open('get', 'https://superheroapi.com/api.php/4382711015094904/search/' +val); // MY EXTERNAL JSON URL
+xhrRequest.send();
 
     }
+    document.getElementById('heroName').addEventListener('keydown', function(ev){
+        if(ev.keycode==13){
+            if (heroId==0){
+                alert('no hero found! try from the list');
+
+            }else{
+                superHero();
+            }
+        }
+    });
 
 
 
     //function to clear the list item from the list
     function clearList(){
-       const list=document.getElementById('autoComplete');
+    var list=document.getElementById('autoComplete');
         while(list.hasChildNodes()) {
             list.removeChild(list.firstChild)
         }
@@ -59,18 +69,21 @@ request.send();
 //search button click event
         document.getElementById('btnSearch').addEventListener('click',showHero);
         function showHero(){
-          var name= document.getElementById('btnSearch').value;
-            if(name="") {
+          var name= document.getElementById('heroName').value;
+            if(name=="") {
                 alert("Enter the name");
             }
-            else if(superHeroId==0) {
+            else if(heroId==0) {
                 alert('hero not find try from the list');
 
             }
             else {
-                window.open('superhero.html?id='+superHeroId, 'blank');
+                window.open('superhero.html?id='+heroId);
+
+              //  window.open('superhero.html?id='+superHeroId, 'blank');
             }
         }
 document.getElementById('btnFavourite').addEventListener('click',function() {
-  window.location.assign('favourite.html');})
+  window.location.assign('favourite.html');
+})
 

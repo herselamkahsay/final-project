@@ -1,10 +1,10 @@
 // -----shuperhero details or informations
 var xhrRequest = new XMLHttpRequest();
-const queryString = window.location.search;
-const urlparams = new URLSearchParams (queryString);
-var superHeroId = urlparams.get('id');
+const queryString = window.location.search;// what is the difference between document.location. search and window.location.search
+const urlParams = new URLSearchParams (queryString);
+var heroId = urlParams.get('id');
 let heroObject=null;
-xhrRequest.onload=function(){
+xhrRequest.onload= function (){
     var result=JSON.parse(xhrRequest.response);
     //grabing all available data
     var names=result;
@@ -12,34 +12,74 @@ xhrRequest.onload=function(){
     fillHeroData(heroObject);
     document.getElementById('heroImage').attributes.src=heroObject.image.url;
 } 
-request.open('get', 'https://superheroapi.com/api/4382711015094904/'+superHeroId); // MY EXTERNAL JSON URL
-request.send();
+xhrRequest.open('get', 'https://superheroapi.com/api.php/4382711015094904/'+heroId); // MY EXTERNAL JSON URL
+xhrRequest.send();
 
 //function to access or fill hero data
 function fillHeroData(data){
     var img = document.getElementById('heroImage');
-    img.setAttribute('src',data.image.url).innerText=data.name;
-    /*var powers =data.powerstats;
-    addPowers(powers);*/
-    var otherNames =data.biography.aliases;
+    img.setAttribute('src',data.image.url);
+    document.getElementById('heroName').innerText=data.name;
+    var powers = data.powerstats;
+    addPowers(powers);
+    var otherNames = data.biography.aliases;
     aliases(otherNames);
     biography(data.biography);
-    var connections =data.connections["groupAffiliation"];
+    var connections = data.connections["groupAffiliation"];
     document.getElementById('connections').innerText='connections : '+connections;
     var publisher = document.createElement('span');
     publisher.innerText = data.biography.publisher;
+    publisher.style.fontFamily='sans-serf';
+    publisher.style.fontSize='1.3rem';
     document.getElementById('moreInfo').appendChild(publisher);
 }
+/*function addPowers(powers){
+    for(const [key,value] of object.entries(powers)){
+        var p = document.createElement('p');
+        p.innerText=`${key}:${value}`;
+        p.classList.add('details')
+        document.getElementById('heroDetails').appendChild(p);
+    }
+}*/
 function biography(bio){
     console.log(bio);
-    for(const[key, value]of object.entries(bio)){
+    for(const [key, value]of object.entries(bio)){
         var p = document.createElement('p');
         p.innerText= `${key}: ${value}`;
+        p.style.textTransform='capitalize'
         document.getElementById('occupation').appendChild(p);
 
     } 
 }
-document.groupAffiliation('btnAddfav').addEventListener('click',addToFavourite);
+function aliases(otherNames){
+    for(let i=0;i<otherNames.length;i++){
+        var span=document.createElement('span');
+        if(otherNames.length==1){
+            span.innerText=' ( '+ otherNames[i]+' )';
+            span.style.textTransform='capitalize'
+            document.getElementById('aliases').appendChild(span);
+            break;
+        }if(i==0){
+            span.innerText=' ( '+ otherNames[i]+' , ';
+        }else if (i==otherNames.length+1){
+            span.innerText=otherNames[i]+' ) ';
+        }else{
+            span.innerText=otherNames[i]+' , ';
+        }
+        span.style.textTransform='capitalize'
+        document.getElementById('aliases').appendChild(span);
+        }
+    }
+    function AddPowers(powers){
+        for(const [key,value] of object.entries(powers)){
+            var p = document.createElement('p');
+            p.innerText=`${key}:${value}`;
+            p.classList.add('details')
+            document.getElementById('heroDetails').appendChild(p);
+        }
+    }
+
+document.getElementById('btnAddFav').addEventListener('click',addToFavourite);
 function showToastMessage(added){
     var message;
     if(added){
@@ -48,27 +88,27 @@ function showToastMessage(added){
     else{
         message="superhero already added"
     }
-    var item = document.getElementById("msgContainer");
-    item.innerText=message;
-    item.style.display='block';
+    var elem = document.getElementById("msgContainer");
+    elem.innerText=message;
+    elem.style.display='block';
     setTimeout(function(){
-        item.style.display='none';
-    });
+        elem.style.display='none';
+    },1300)
 }
 
 //function to add favourite
 function addToFavourite(){
-    let superHeroName = heroObject.name;
+    let heroName = heroObject.name;
     let heroImage = heroObject.image;
     var hero = {
         id:heroId,
-        name: superHeroName,
+        name: heroName,
         image: heroImage.url
     }
-}
+
 //acces and push data
-var storeNames = JSON.parse(localStorage.getItem("names") || "[]");
-if(storeNames==null){
+var storedNames = JSON.parse(localStorage.getItem("names") || "[]");
+if(storedNames==null){
     var names = [];
     names.push(hero);
     window.localStorage.setItem("names", JSON.stringify(names));
@@ -76,15 +116,19 @@ if(storeNames==null){
 
 }
 else{
-    var res = containsObject (superHeroId,storeNames);
+    var res = containsObject(heroId,storedNames);
     console.log(res);
     if(!res){
-        storeNames.push(hero);
-        window.localStorage.setItem("names",JSON.stringify(storeNames));
+        storedNames.push(hero);
+        window.localStorage.setItem("names", JSON.stringify(storedNames));
         showToastMessage(true);
+    }else{
+        showToastMessage(false);
     }
 }
-console.log(storeNames);
+console.log(storedNames);
+}
+
 // to check added or not
 function containsObject(id, list){
     for(let i=0;i<list.length;i++){
@@ -95,5 +139,6 @@ function containsObject(id, list){
     return false;
 } 
 document.getElementById('btnFavourite').addEventListener('click',function() {
-    window.location.assign('favourite.html');})
+    window.location.assign('favourite.html');
+})
   
