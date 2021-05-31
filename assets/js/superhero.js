@@ -70,8 +70,8 @@ function aliases(otherNames){
         document.getElementById('aliases').appendChild(span);
         }
     }
-    function AddPowers(powers){
-        for(const [key,value] of object.entries(powers)){
+    function addPowers(powers){
+        for(const [key,value] of Object.entries(powers)){
             var p = document.createElement('p');
             p.innerText=`${key}:${value}`;
             p.classList.add('details')
