@@ -33,17 +33,10 @@ function fillHeroData(data){
     publisher.style.fontSize='1.3rem';
     document.getElementById('moreInfo').appendChild(publisher);
 }
-/*function addPowers(powers){
-    for(const [key,value] of object.entries(powers)){
-        var p = document.createElement('p');
-        p.innerText=`${key}:${value}`;
-        p.classList.add('details')
-        document.getElementById('heroDetails').appendChild(p);
-    }
-}*/
+
 function biography(bio){
     console.log(bio);
-    for(const [key, value]of object.entries(bio)){
+    for(const [key, value]of Object.entries(bio)){
         var p = document.createElement('p');
         p.innerText= `${key}: ${value}`;
         p.style.textTransform='capitalize'
