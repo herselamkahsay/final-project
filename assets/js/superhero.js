@@ -25,7 +25,8 @@ function fillHeroData(data){
     var otherNames = data.biography.aliases;
     aliases(otherNames);
     biography(data.biography);
-    var connections = data.connections["groupAffiliation"];
+    var connections = data.connections["group-affiliation"];
+    //var connections = data.connections["relatives"];
     document.getElementById('connections').innerText='connections : '+connections;
     var publisher = document.createElement('span');
     publisher.innerText = data.biography.publisher;
@@ -33,6 +34,7 @@ function fillHeroData(data){
     publisher.style.fontSize='1.3rem';
     document.getElementById('moreInfo').appendChild(publisher);
 }
+
 
 function biography(bio){
     console.log(bio);
