@@ -14,10 +14,10 @@ function getData() {
       
         // Success!
             var result = JSON.parse(xhrRequest.response);
-            //getting all dat()              
+            //getting all data()              
             var names = result.results;
             if(names == null){
-                clearList();
+                clearList(); 
                 console.log("not found");
             }
             else {
