@@ -10,7 +10,7 @@
         image.setAttribute('alt', 'hero image');
         parent.appendChild(image);
         var child = document.createElement('div');
-        child.classList.add('cardBody');
+        child.classList.add('card-body');
         var h3 = document.createElement('h3');
         h3.classList.add('card-title');
         h3.innerText=data.name;
@@ -18,7 +18,7 @@
         //btn details
         var details = document.createElement('a');
         details.classList.add('btn');
-        details.classList.add('btnSuccess');
+        details.classList.add('btn-success');
         details.setAttribute('href', 'superhero.html?id='+data.id);
         var iconDetails = document.createElement('i');
         iconDetails.classList.add('fa');
@@ -31,7 +31,7 @@
         //remove btn
         var remove = document.createElement('a');
         remove.classList.add('btn');
-        remove.classList.add('btnDanger');
+        remove.classList.add('btn-danger');
         //remove icon
         var iconRemove = document.createElement('i');
         iconRemove.classList.add('fa');
@@ -51,7 +51,7 @@
         parent.appendChild(child);
         //appending child to container
 
-        document.getElementById('cardsContainer').appendChild(parent);
+        document.getElementById('cards-container').appendChild(parent);
 
     }
     // loops to add cards
@@ -73,7 +73,7 @@
         window.localStorage.removeItem("names");
     }
     window.localStorage.setItem("names", JSON.stringify(arr));
-    document.getElementById('cardsContainer').innerHTML="";
+    document.getElementById('cards-container').innerHTML="";
     for(let i=0;i<storedNames.length;i++){
         createCards(storedNames[i]);
     }
