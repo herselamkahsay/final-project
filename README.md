@@ -2,7 +2,6 @@
 
 ## search super hero, read information and save your favorite
 ## To make this webpage I used HTML CSS AND JAVASCRIPT
-I didn't used any library
 in my assets folder I have all the files other than index.html
 I try to organize and easy to access
 I used bootstrap
@@ -16,8 +15,7 @@ before I start coding I finish all my work on my mind (I planned before coding)
 
 ---
 ## challenges
-my challenge is to apply my knowledge of ***javascript*** 90% of my time was to make it interactive or applying JS. finally after a lot of struggle i finish my project
-and other challenge was to understand and how to use API. I make search to read about and it was great response.
+my challenge is to apply my knowledge of ***javascript*** 90% of my time was to make it interactive or applying JS and other challenge was to understand and how to use API. I make search to read about and it was great response.Finally after a lot of struggle i finish my project
 
 
 ## Some links I used as a reference and source 
