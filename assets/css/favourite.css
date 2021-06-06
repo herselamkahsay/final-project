@@ -8,9 +8,8 @@ body{
 h1{
     color: white;
 }
-h3{
-    color: white;
-}
+
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -21,4 +20,5 @@ h3{
     width: 18rem;
     background-color: black;
     margin: 4%;
+    color: white;
 }
