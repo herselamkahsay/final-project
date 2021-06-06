@@ -32,7 +32,7 @@ function fillHeroData(data){
     publisher.innerText = data.biography.publisher;
     publisher.style.fontFamily='sans-serf';
     publisher.style.fontSize='1.3rem';
-    document.getElementById('moreInfo').appendChild(publisher);
+    document.getElementById('additional-info').appendChild(publisher);
 }
 
 
@@ -74,7 +74,7 @@ function aliases(otherNames){
         }
     }
 
-document.getElementById('btnAddFav').addEventListener('click',addToFavourite);
+document.getElementById('btn-add-favourite').addEventListener('click',addToFavourite);
 function showToastMessage(added){
     var message;
     if(added){
@@ -83,7 +83,7 @@ function showToastMessage(added){
     else{
         message="superhero already added"
     }
-    var elem = document.getElementById("msgContainer");
+    var elem = document.getElementById("msg-container");
     elem.innerText=message;
     elem.style.display='block';
     setTimeout(function(){
@@ -133,7 +133,7 @@ function containsObject(id, list){
     }
     return false;
 } 
-document.getElementById('btnFavourite').addEventListener('click',function() {
+document.getElementById('btn-favourite').addEventListener('click',function() {
     window.location.assign('favourite.html');
 })
   

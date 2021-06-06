@@ -6,7 +6,7 @@ let heroId=0;
 function getData() {
 
     var val = document.getElementById('heroName').value;
-    var list = document.getElementById('autoComplete');
+    var list = document.getElementById('auto-complete');
   //  clearList();
 
    var xhrRequest = new XMLHttpRequest();
@@ -25,7 +25,7 @@ function getData() {
                     var li = document.createElement('li');
                     li.innerText = i.name; //property
                     li.id = i.id;
-                    li.classList.add('listGroupItem');
+                    li.classList.add('list-group-item');
                     li.addEventListener('click', function() {
                         heroId=this.id;
                         document.getElementById('heroName').value=this.innerText;
@@ -33,7 +33,7 @@ function getData() {
                         document.getElementById('heroName').focus();
                         return;
                     })
-                    var ul = document.getElementById('autoComplete').appendChild(li);
+                    var ul = document.getElementById('auto-complete').appendChild(li);
 
                 }
             }
@@ -61,13 +61,13 @@ xhrRequest.send();
 
     //function to clear the list item from the list
     function clearList(){
-    var list=document.getElementById('autoComplete');
+    var list=document.getElementById('auto-complete');
         while(list.hasChildNodes()) {
             list.removeChild(list.firstChild)
         }
     }
 //search button click event
-        document.getElementById('btnSearch').addEventListener('click',showHero);
+        document.getElementById('btn-search').addEventListener('click',showHero);
         function showHero(){
           var name= document.getElementById('heroName').value;
             if(name=="") {
@@ -83,7 +83,7 @@ xhrRequest.send();
               //  window.open('superhero.html?id='+superHeroId, 'blank');
             }
         }
-document.getElementById('btnFavourite').addEventListener('click',function() {
+document.getElementById('btn-favourite').addEventListener('click',function() {
   window.location.assign('favourite.html');
 })
 
