@@ -9,6 +9,9 @@ body{
 a{
     color: white;
 }
+.color a {
+    color: white;
+}
 .container {
     text-align: center;
     color: #ffffff;

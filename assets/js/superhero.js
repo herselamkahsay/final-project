@@ -33,6 +33,10 @@ function fillHeroData(data){
     publisher.style.fontFamily='sans-serf';
     publisher.style.fontSize='1.3rem';
     document.getElementById('additional-info').appendChild(publisher);
+    //var appearance = data.appearance["gender"];
+    //document.getElementById('appearance').innerText='appearance : '+appearance;
+    var statistics =data.appearance;
+    addStatistics(statistics);
 }
 
 
@@ -71,6 +75,14 @@ function aliases(otherNames){
             p.innerText=`${key}:${value}`;
             p.classList.add('details')
             document.getElementById('heroDetails').appendChild(p);
+        }
+    }
+    function addStatistics(statistics){
+        for(const [key,value] of Object.entries(statistics)){
+            var p = document.createElement('p');
+            p.innerText=`${key}:${value}`;
+            p.classList.add('details')
+            document.getElementById('appearance').appendChild(p);
         }
     }
 

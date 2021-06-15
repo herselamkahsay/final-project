@@ -1,9 +1,8 @@
-    var storedNames = JSON.parse(localStorage.getItem("names")||"[]");
+    var storedNames = JSON.parse(localStorage.getItem("names")||"[]"); //why "names")||"[]"
     //creat individual cards
     function createCards(data){
         var parent = document.createElement('div');
         parent.classList.add('card');
-        parent.setAttribute('id',Date.now());
         var image = document.createElement('img');
         image.classList.add('card-img-top');
         image.setAttribute('src', data.image);
@@ -21,8 +20,8 @@
         details.classList.add('btn-success');
         details.setAttribute('href', 'superhero.html?id='+data.id);
         var iconDetails = document.createElement('i');
-        iconDetails.classList.add('fa');
-        iconDetails.classList.add('fa-info-circle');
+        iconDetails.classList.add('bi');
+        iconDetails.classList.add('bi-star-fill');
         details.appendChild(iconDetails);
         var detailsText = document.createElement('span');
         detailsText.innerText=' show Details';
