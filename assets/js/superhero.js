@@ -71,10 +71,13 @@ function aliases(otherNames){
     }
     function addPowers(powers){
         for(const [key,value] of Object.entries(powers)){
-            var p = document.createElement('p');
-            p.innerText=`${key}:${value}`;
-            p.classList.add('details')
-            document.getElementById('heroDetails').appendChild(p);
+            if (value != "null") {
+                console.log("Test")
+                var p = document.createElement('p');
+                p.innerText=`${key}:${value}`;
+                p.classList.add('details')
+                document.getElementById('heroDetails').appendChild(p);
+            }
         }
     }
     function addStatistics(statistics){
