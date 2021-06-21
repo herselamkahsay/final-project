@@ -72,7 +72,7 @@ function aliases(otherNames){
     function addPowers(powers){
         for(const [key,value] of Object.entries(powers)){
             if (value != "null") {
-                console.log("Test")
+                //console.log("Test")
                 var p = document.createElement('p');
                 p.innerText=`${key}:${value}`;
                 p.classList.add('details')
